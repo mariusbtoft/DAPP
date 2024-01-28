@@ -233,11 +233,11 @@ const Home: NextPage = () => {
         <Balance address={address} />
         <h1 className="mt-5 mb-3 font-bold text-1xl">You have contributed to the following campaigns IDs:</h1>
         {campaignContributions.length === 0 ? (
-          <h1 className="mt-5 mb-3 font-bold text-1xl">No contributions yet</h1>) : (<h1 className="mt-5 mb-3 font-bold text-1xl">{campaignContributions}</h1>)}
+          <h1 className="mt-5 mb-1 font-bold text-1xl">No contributions yet</h1>) : (<h1 className="mt-5 mb-1 font-bold text-1xl">{campaignContributions}</h1>)}
       </div>
 
       <div className="flex items-center flex-col flex-grow pt-10">
-        <h1 className="mt-5 mb-3 font-bold text-2xl">Create a campaign</h1>
+        <h1 className="mt-1 mb-3 font-bold text-2xl">Create a campaign</h1>
         <input
           type="text"
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
@@ -272,6 +272,8 @@ const Home: NextPage = () => {
 
       <div className="flex items-center flex-col flex-grow pt-10">
         <h1 className="mt-5 mb-3 font-bold text-2xl">Contribute to a campaign</h1>
+        <h1 className="mt-3 mb-5 font-bold text-1xl">Type in a campaign ID to see campaign details</h1>
+
         <input
           type="number"
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
