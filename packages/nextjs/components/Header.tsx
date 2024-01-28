@@ -1,18 +1,16 @@
-"use client";
-
 import React, { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
-type HeaderMenuLink = {
+interface HeaderMenuLink {
   label: string;
   href: string;
   icon?: React.ReactNode;
-};
+}
 
 export const menuLinks: HeaderMenuLink[] = [
   {
@@ -27,12 +25,12 @@ export const menuLinks: HeaderMenuLink[] = [
 ];
 
 export const HeaderMenuLinks = () => {
-  const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <>
       {menuLinks.map(({ label, href, icon }) => {
-        const isActive = pathname === href;
+        const isActive = router.pathname === href;
         return (
           <li key={href}>
             <Link

@@ -27,7 +27,7 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
 
   const [enteredEnsName, setEnteredEnsName] = useState<string>();
   const { data: ensName, isLoading: isEnsNameLoading } = useEnsName({
-    address: settledValue as Address,
+    address: settledValue,
     enabled: isAddress(debouncedValue),
     chainId: 1,
     cacheTime: 30_000,
@@ -62,7 +62,7 @@ export const AddressInput = ({ value, name, placeholder, onChange, disabled }: C
       name={name}
       placeholder={placeholder}
       error={ensAddress === null}
-      value={value as Address}
+      value={value}
       onChange={handleChange}
       disabled={isEnsAddressLoading || isEnsNameLoading || disabled}
       prefix={
