@@ -263,7 +263,7 @@ const Home: NextPage = () => {
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
           value={duration}
           onChange={event => setDuration(event.target.value)}
-          placeholder="Campaign duration"
+          placeholder="Campaign duration (days)"
         />
         <button onClick={setCampaign} className="btn btn-primary">
           Create Campaign
@@ -293,6 +293,7 @@ const Home: NextPage = () => {
 
       <div className="flex items-center flex-col flex-grow pt-10">
         <h1 className="mt-5 mb-3 font-bold text-2xl">Get refund</h1>
+        <h1 className="mt-3 mb-5 font-bold text-1xl">If a campaign has ended and the goal has not been reached, you can get a refund.</h1>
         <input
           type="number"
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
@@ -301,7 +302,7 @@ const Home: NextPage = () => {
           placeholder="Campaign ID"
         />
         <button onClick={refundCampaign} className="mt-2 btn btn-primary">
-          Check campaign
+          Get refund
         </button>
       </div>
     </>
