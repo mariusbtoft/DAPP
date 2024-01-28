@@ -232,7 +232,8 @@ const Home: NextPage = () => {
         <h1 className="mt-5 mb-3 font-bold text-1xl">Your balance is:</h1>
         <Balance address={address} />
         <h1 className="mt-5 mb-3 font-bold text-1xl">You have contributed to the following campaigns IDs:</h1>
-        <h1 className="mt-5 mb-3 font-bold text-1xl">{campaignContributions}</h1>
+        {campaignContributions.length === 0 ? (
+          <h1 className="mt-5 mb-3 font-bold text-1xl">No contributions yet</h1>) : (<h1 className="mt-5 mb-3 font-bold text-1xl">{campaignContributions}</h1>)}
       </div>
 
       <div className="flex items-center flex-col flex-grow pt-10">
@@ -248,8 +249,8 @@ const Home: NextPage = () => {
           type="text"
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
           value={description}
-          onChange={event => setDescription(event.target.value)}
-          placeholder="Campaign Description"
+          onChange={(event) => setDescription(event.target.value)}
+          placeholder="Description (max 100 characters)" maxLength={100}
         />
         <div className="mb-2">
           <EtherInput value={goal} onChange={value => setGoal(value)} placeholder="Funding Goal" />
