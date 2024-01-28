@@ -243,7 +243,7 @@ const Home: NextPage = () => {
           className="input input-ghost focus:outline-none focus:bg-transparent focus:text-gray-400 h-[2.2rem] min-h-[2.2rem] px-4 w-72 font-medium placeholder:text-accent/50 text-gray-400 border-2 border-base-300 bg-base-200 rounded-full text-accent mb-2"
           value={title}
           onChange={event => setTitle(event.target.value)}
-          placeholder="Campaign Title"
+          placeholder="Title (max 50 characters)" maxLength={50}
         />
         <input
           type="text"
