@@ -19,7 +19,6 @@ import {
 
 const Home: NextPage = () => {
   // State for the inputs and blockchain interaction
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [goal, setGoal] = useState("");
@@ -34,9 +33,7 @@ const Home: NextPage = () => {
   const [fundsRaised, setFundsRaised] = useState("");
 
   const [campaignContributions, setCampaignContributions] = useState("");
-
   const [checkCampaignID, setCheckCampaignID] = useState("");
-
   const { address } = useAccount();
 
   //Listen for campaign ended event and console.log the event that has ended
